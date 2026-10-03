@@ -1,0 +1,14 @@
+{
+  "name": "composition",
+  "description": "美学构图与中文图像、视频提示词导演，覆盖镜头构图、光影、色彩、材质、氛围、FilmStyle 连续性和负面限制。",
+  "version": "1.0.0",
+  "homepage": "https://github.com/cimbird62/writingSkills",
+  "keywords": [
+    "composition",
+    "cinematic",
+    "image-prompts",
+    "video-prompts",
+    "chinese"
+  ],
+  "skills": "./skills"
+}

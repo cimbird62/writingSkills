@@ -1,0 +1,7 @@
+interface:
+  display_name: "ImageDraf"
+  short_description: "中文画面美学构图与提示词导演"
+  default_prompt: "Use $imagedraf to polish this rough scene into a stronger Chinese generation prompt."
+
+policy:
+  allow_implicit_invocation: true
