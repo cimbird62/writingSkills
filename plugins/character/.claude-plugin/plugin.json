@@ -1,0 +1,8 @@
+{
+  "name": "character",
+  "description": "基于人物塑造课件，通过因果小传、行动、裂缝、反差、多视角、价值底色、独特行为与重复展示塑造可记住的人物，并支持情绪场景和可选短片练习。",
+  "version": "1.0.0",
+  "homepage": "https://github.com/cimbird62/writingSkills",
+  "keywords": ["character-writing", "characterization", "subtext", "short-film", "chinese"],
+  "skills": "./skills"
+}

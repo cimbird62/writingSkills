@@ -1,0 +1,7 @@
+interface:
+  display_name: "人物塑造"
+  short_description: "用因果小传、行动细节、合理反差与留白，让故事人物鲜活可记"
+  default_prompt: "使用 $character-shaping 改进这个人物，用具体行动、合理反差和留白展示其性格与情绪。"
+
+policy:
+  allow_implicit_invocation: true

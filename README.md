@@ -1,6 +1,6 @@
 # writingSkills
 
-编剧与画面构图技能库，供 Codex 和 Claude Code 使用。目前包含 **27 个技能**：26 个编剧技能，以及个人美学构图技能 `imagedraf`。
+编剧、画面构图与人物塑造技能库，供 Codex 和 Claude Code 使用。目前包含 **28 个技能**：26 个编剧技能、美学构图技能 `imagedraf`，以及按人物塑造课件整理的 `character-shaping`。
 
 ## 技能包
 
@@ -8,8 +8,11 @@
 |---|---:|---|---|
 | screenwriting | 26 | 故事结构、人物冲突、对白、场景、剧集、戏曲、案例与行业实务 | [plugins/screenwriting/skills](plugins/screenwriting/skills) |
 | composition | 1 | 构图、镜头、光影、色彩、材质、氛围与中文图像/视频提示词 | [plugins/composition/skills](plugins/composition/skills) |
+| character | 1 | 人物小传、行动细节、反差、留白、八项塑造技巧与情绪场景 | [plugins/character/skills](plugins/character/skills) |
 
 编剧技能的参考资料和术语表完整保留。构图技能包含 `SKILL.md`、`image2 SKILL.md` 和 `agents/openai.yaml`。
+
+人物塑造技能依据《从“符号”到“人”：让人物被记住》整理，配有课程页码与案例参考、可选的 15 秒短片及手机拍摄指导。已有的 `sw-character-conflict` 提供上游编剧理论，`character-shaping` 提供这份课件的具体塑造方法。
 
 ## 安装
 
@@ -22,12 +25,13 @@ cd writingSkills
 
 ### Codex 个人技能
 
-在仓库目录执行，将全部 27 个技能加入个人技能目录：
+在仓库目录执行，将全部 28 个技能加入个人技能目录：
 
 ```bash
 mkdir -p ~/.codex/skills
 cp -Rn plugins/screenwriting/skills/. ~/.codex/skills/
 cp -Rn plugins/composition/skills/. ~/.codex/skills/
+cp -Rn plugins/character/skills/. ~/.codex/skills/
 ```
 
 `-n` 保留已有同名文件。需要升级已安装版本时，请先备份再替换对应技能目录。
@@ -41,6 +45,7 @@ WRITING_SKILLS_PROJECT=/absolute/path/to/your-project
 mkdir -p "$WRITING_SKILLS_PROJECT/.agents/skills"
 cp -Rn plugins/screenwriting/skills/. "$WRITING_SKILLS_PROJECT/.agents/skills/"
 cp -Rn plugins/composition/skills/. "$WRITING_SKILLS_PROJECT/.agents/skills/"
+cp -Rn plugins/character/skills/. "$WRITING_SKILLS_PROJECT/.agents/skills/"
 ```
 
 ### Claude Code 个人技能
@@ -49,9 +54,10 @@ cp -Rn plugins/composition/skills/. "$WRITING_SKILLS_PROJECT/.agents/skills/"
 mkdir -p ~/.claude/skills
 cp -Rn plugins/screenwriting/skills/. ~/.claude/skills/
 cp -Rn plugins/composition/skills/. ~/.claude/skills/
+cp -Rn plugins/character/skills/. ~/.claude/skills/
 ```
 
-仓库还包含 Codex 和 Claude Code 的插件市场清单，分别位于 `.agents/plugins/marketplace.json` 和 `.claude-plugin/marketplace.json`。两个清单均提供 `screenwriting` 和 `composition` 插件。
+仓库还包含 Codex 和 Claude Code 的插件市场清单，分别位于 `.agents/plugins/marketplace.json` 和 `.claude-plugin/marketplace.json`。两个清单均提供 `screenwriting`、`composition` 和 `character` 插件。
 
 ## 调用示例
 
@@ -63,6 +69,7 @@ $sw-story-structure 把这个故事梗概整理成完整的节拍表。
 $sw-dialogue 修改这场戏的对白，增强潜台词和人物差异。
 $sw-series-engine-bible 把这个创意发展成剧集设计和剧集圣经。
 $imagedraf 优化这个镜头的构图、光影和材质，输出中文生成提示词。
+$character-shaping 按我们的课件塑造这个人物，用行动、反差和留白让他被记住。
 ```
 
 编剧技能按照提问语言作答。`imagedraf` 默认输出可直接使用的中文图像或视频提示词。
@@ -98,6 +105,7 @@ $imagedraf 优化这个镜头的构图、光影和材质，输出中文生成提
 | `succession-series-writing` | 《继承之战》群像剧方法 |
 | `sw-series-case-studies` | 剧集案例库 |
 | `imagedraf` | 美学构图与图像/视频提示词导演 |
+| `character-shaping` | 按课件塑造鲜活人物，设计行为细节、反差、留白与情绪场景 |
 
 ## 检查与来源
 
@@ -105,8 +113,10 @@ $imagedraf 优化这个镜头的构图、光影和材质，输出中文生成提
 python3 tools/check-skills.py --strict
 ```
 
-检查脚本遍历两个技能包，验证技能名称、描述长度和 Markdown 引用路径。
+检查脚本遍历三个技能包，验证技能名称、描述长度和技能目录下的 Markdown 引用路径。
 
 编剧技能来自 [jtydhr88/screenwriting-skills](https://github.com/jtydhr88/screenwriting-skills)，其 [MIT 许可证](plugins/screenwriting/LICENSE)、[版权说明](plugins/screenwriting/NOTICE) 和原作者信息均已保留。检查脚本的许可证位于 [tools/LICENSE](tools/LICENSE)。构图技能来自个人技能目录 `imagedraf`，本次迁入保留原有文件内容，未增加授权声明。
+
+人物塑造技能来自用户指定的 18 页课件，其 [课程参考](plugins/character/skills/character-shaping/reference.md) 保留页码、方法归纳与案例边界。仓库收录整理后的技能与参考文字，原 PDF 未入库；未推定课件作者或额外授权。
 
 完整编剧说明与来源书目见 [上游中文文档](docs/screenwriting/README_ZH.md)。迁入版本记录见 [UPSTREAM.md](UPSTREAM.md)。

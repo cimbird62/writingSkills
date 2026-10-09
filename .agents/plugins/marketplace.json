@@ -29,6 +29,19 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "character",
+      "description": "Character writing based on the user's Chinese course: causal biography, action, flaws, contrast, multiple viewpoints, values, distinctive behavior, repetition and emotional subtext.",
+      "source": {
+        "source": "local",
+        "path": "./plugins/character"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }

@@ -1,4 +1,4 @@
-> 上游编剧技能文档。当前仓库的 27 个技能及安装方式见 [writingSkills 主说明](../../README.md)。
+> 上游编剧技能文档。当前仓库的 28 个技能及安装方式见 [writingSkills 主说明](../../README.md)。
 
 # screenwriting-skills
 

@@ -4,7 +4,7 @@
     "name": "cimbird62"
   },
   "metadata": {
-    "description": "27 skills for screenwriting and visual composition: 26 screenwriting, television and dramaturgy skills, plus imagedraf for cinematic framing, lighting, color and Chinese image/video generation prompts."
+    "description": "28 skills for screenwriting, visual composition and character writing: 26 screenwriting skills, imagedraf for cinematic prompts and character-shaping for memorable fictional characters."
   },
   "plugins": [
     {
@@ -16,6 +16,11 @@
       "name": "composition",
       "description": "Chinese visual composition and cinematic prompt direction using imagedraf; framing, lighting, color, materials, atmosphere and constraints for image and video prompts.",
       "source": "./plugins/composition"
+    },
+    {
+      "name": "character",
+      "description": "Character writing based on the user's Chinese course: causal biography, action, flaws, contrast, multiple viewpoints, values, distinctive behavior, repetition and emotional subtext.",
+      "source": "./plugins/character"
     }
   ]
 }
